@@ -54,7 +54,8 @@ const Login = () => {
 
             <div className="login-card d-flex flex-column">
                 <h5 className='mb-5'>
-                    Ingresar
+                    Ingresar<br/>
+                    Administrador
                 </h5>
 
                 <div className="input-group mb-4 shadow">

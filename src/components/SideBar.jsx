@@ -6,7 +6,7 @@ import axios from 'axios';
 import { API_URL } from '../data/api';
 import toast from 'react-hot-toast';
 
-const SideBar = () => {
+const SideBar = ({ user = {} }) => {
     const navigate = useNavigate();
 
     const handleLogout = async () => {
@@ -31,7 +31,7 @@ const SideBar = () => {
     return (
         <div className="offcanvas offcanvas-end shadow" tabIndex="-1" id="sidebar">
             <div className="offcanvas-header">
-                <UserInfo />
+                <UserInfo userName={user.userName} role={user.role} parkName={user.parkName} departmentName={user.departmentName} />
 
                 <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>

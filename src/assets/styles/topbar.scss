@@ -1,0 +1,78 @@
+#topBar {
+    background-color: rgba($white, 0.5);
+    // backdrop-filter: blur(10px);
+    // -webkit-backdrop-filter: blur(10px);
+
+    .logo {
+        position: initial;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .btn-nav {
+        display: flex;
+        font-size: 1.5rem;
+        color: $black;
+        transition: all 0.2s ease-in-out;
+
+        &:hover,
+        &:focus {
+            opacity: 0.5;
+        }
+
+        &:active {
+            border-color: transparent;
+        }
+    }
+
+    .user-info {
+        margin-left: auto;
+
+        .photo>svg {
+            font-size: 40px;
+        }
+    }
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: $black;
+
+    .photo>svg {
+        font-size: 50px;
+        color: rgba($black, 0.5);
+        border: 2px solid $main;
+        border-radius: 100%;
+    }
+
+    &>div {
+        max-width: 200px;
+        width: 100%;
+    }
+
+    .name {
+        margin: 0;
+        font-size: 14px;
+        text-transform: capitalize;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .park,
+    .role {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 10px;
+        font-weight: 500;
+        color: $main;
+    }
+}

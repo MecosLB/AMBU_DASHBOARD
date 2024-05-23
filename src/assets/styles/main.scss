@@ -1,2 +1,83 @@
 @import "bootstrap/scss/bootstrap";
 
+// Variables
+$main: #3DA891;
+$white: #fff;
+$black: #333;
+$red: #dc3545;
+
+// Breakpoints
+$sm: 640px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1280px;
+
+@import "./login.scss";
+@import "./topbar.scss";
+@import "./sidebar.scss";
+
+// Utilities
+.full-container {
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+.btn-main {
+    width: 100%;
+    max-width: 60%;
+    color: $white;
+    font-weight: 400;
+    border: 2px solid $main;
+    background-color: $main;
+    border-radius: 100px;
+
+    &:hover,
+    &:focus {
+        border-color: $main;
+        color: $main;
+        box-shadow: 0 0.5rem 1rem rgba($main, 0.2) !important;
+    }
+}
+
+.btn-cancel {
+    @extend .btn-main;
+    border-color: $red;
+    background-color: $red;
+
+    &:hover,
+    &:focus {
+        border-color: $red;
+        color: $red;
+        box-shadow: 0 0.5rem 1rem rgba($red, 0.2) !important;
+    }
+}
+
+.logo {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    mix-blend-mode: exclusion;
+    opacity: 0.5;
+
+    img {
+        max-width: 200px;
+    }
+}
+
+.bg-main {
+    position: relative;
+    overflow: unset;
+
+    &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-image: url(../images/circles-pattern.jpg);
+        background-size: cover;
+        background-position: top;
+        opacity: 0.05;
+        z-index: -1;
+    }
+}

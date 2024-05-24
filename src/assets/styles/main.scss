@@ -5,6 +5,9 @@ $main: #3DA891;
 $white: #fff;
 $black: #333;
 $red: #dc3545;
+$low: #198754;
+$medium: #ffc107;
+$high: #dc3545;
 
 // Breakpoints
 $sm: 640px;
@@ -15,6 +18,7 @@ $xl: 1280px;
 @import "./login.scss";
 @import "./topbar.scss";
 @import "./sidebar.scss";
+@import "./ticketbar.scss";
 @import "./home.scss";
 
 // Utilities
@@ -22,6 +26,20 @@ $xl: 1280px;
     height: 100vh;
     max-height: 100vh;
     overflow: hidden;
+}
+
+.text-overflow {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.offcanvas {
+    background-color: rgba($white, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-left: none !important;
+    border-right: none !important;
 }
 
 .btn-main {
@@ -84,8 +102,8 @@ $xl: 1280px;
 }
 
 .module-card {
-    height: 70vh;
-    max-height: 70vh;
+    height: 80vh;
+    max-height: 80vh;
     background-color: rgba($white, 0.2);
     border-radius: 20px;
     backdrop-filter: blur(2px);
@@ -106,6 +124,7 @@ $xl: 1280px;
     background-color: rgba($white, 0.9);
     margin: 0;
     padding: 1.5rem 1.5rem 0.5rem;
+    z-index: 2;
 
     h5 {
         font-weight: 500;
@@ -121,6 +140,46 @@ $xl: 1280px;
 .divider {
     border-top: 2px solid rgba($black, 0.5);
     margin: 0.5rem 0 1rem;
+}
+
+.text-low {
+    color: $low;
+}
+
+.text-medium {
+    color: $medium;
+}
+
+.text-high {
+    color: $high;
+}
+
+.bg-low {
+    background-color: rgba($low, 0.2);
+}
+
+.bg-medium {
+    background-color: rgba($medium, 0.2);
+}
+
+.bg-high {
+    background-color: rgba($high, 0.2);
+}
+
+// Spinner
+.spinner {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: conic-gradient(#0000 10%, $main);
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 9px), #000 0);
+    animation: spinner-zp9dbg 1s infinite linear;
+}
+
+@keyframes spinner-zp9dbg {
+    to {
+        transform: rotate(1turn);
+    }
 }
 
 // Scroll

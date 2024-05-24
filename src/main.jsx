@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './assets/styles/main.scss';
 import * as bootstrap from 'bootstrap';
+import '@splidejs/react-splide/css';
 import Login from './views/Login';
 import Dashboard from './views/Dashboard';
 import NotFound from './views/NotFound';

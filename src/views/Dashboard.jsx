@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Outlet, redirect } from 'react-router-dom';
 import TopBar from '../components/TopBar';
 import SideBar from '../components/SideBar';
+import TicketBar from '../components/TicketBar';
 
 const Dashboard = () => {
     const [user, setUser] = useState(null);
+    const [activeTicket, setActiveTicket] = useState(null);
 
     useEffect(() => {
         getUser();
@@ -26,7 +28,8 @@ const Dashboard = () => {
                 <TopBar user={{ ...user }} />
                 <SideBar user={{ ...user }} />
 
-                <Outlet />
+                <Outlet context={[activeTicket, setActiveTicket]} />
+                <TicketBar {...activeTicket} />
             </section>
         </>
     );

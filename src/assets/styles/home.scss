@@ -1,5 +1,87 @@
 #home {
     .row {
         color: $black;
+
+        .col-12:last-child {
+            position: sticky;
+            top: 51px;
+            height: fit-content;
+        }
+    }
+
+    h5 {
+        font-size: 1rem;
+        text-transform: uppercase;
+    }
+
+    .counter {
+        font-size: 1.25rem;
+        font-weight: 500;
+
+        svg {
+            color: rgba($black, 0.5);
+        }
+
+        small {
+            font-size: 0.75rem;
+        }
+    }
+
+    .middle-border {
+        border-left: 2px solid rgba($black, 0.2);
+        border-right: 2px solid rgba($black, 0.2);
+    }
+
+    .tickets {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .item {
+            width: 100%;
+            padding: 1rem;
+            border-bottom: 1px solid rgba($black, 0.2);
+            transition: all 0.2s ease-in-out;
+
+            &:hover,
+            &:focus {
+                cursor: pointer;
+                background-color: rgba($black, 0.1);
+            }
+        }
+
+        .photo {
+            max-width: 80px;
+            aspect-ratio: 1;
+            border: 2px solid $main;
+            border-radius: 100%;
+            overflow: hidden;
+        }
+
+        .uid {
+            color: $main;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+
+        .department,
+        .uid {
+            font-weight: 500;
+        }
+
+        .comment {
+            padding: 0.5rem;
+            border-radius: 8px;
+            background-color: rgba($black, 0.2);
+            font-size: 0.9rem;
+        }
+
+        .date {
+            display: block;
+            color: rgba($black, 0.5);
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-align: end;
+        }
     }
 }

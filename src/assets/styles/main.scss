@@ -72,6 +72,32 @@ $xl: 1280px;
     }
 }
 
+.btn-follow {
+    @extend .btn-main;
+    border-color: $medium;
+    background-color: $medium;
+
+    &:hover,
+    &:focus {
+        border-color: $medium;
+        color: $black;
+        box-shadow: 0 0.5rem 1rem rgba($medium, 0.2) !important;
+    }
+}
+
+.btn-end {
+    @extend .btn-main;
+    border-color: $red;
+    background-color: $red;
+
+    &:hover,
+    &:focus {
+        border-color: $red;
+        color: $red;
+        box-shadow: 0 0.5rem 1rem rgba($red, 0.2) !important;
+    }
+}
+
 .logo {
     position: absolute;
     top: 2rem;
@@ -174,6 +200,11 @@ $xl: 1280px;
     background: conic-gradient(#0000 10%, $main);
     -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 9px), #000 0);
     animation: spinner-zp9dbg 1s infinite linear;
+
+    &.sm {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 @keyframes spinner-zp9dbg {

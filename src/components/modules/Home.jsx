@@ -34,13 +34,13 @@ const Home = () => {
     const [solutionAvg, setAvg] = useState([]);
     const [stateTickets, setStateTickets] = useState([]);
 
-    const [activeTicket, setActiveTicket] = useOutletContext();
+    const [activeTicket, setActiveTicket, isUpdating] = useOutletContext();
 
     useEffect(() => {
-        getTodayTickets();
         getSolutionAverage();
         getTicketsByState();
-    }, []);
+        getTodayTickets();
+    }, [isUpdating]);
 
     const getTodayTickets = async () => {
         setLoading(true);
@@ -101,7 +101,7 @@ const Home = () => {
 
     const handleClick = (_uid = '') => {
         const ticket = [...todayTickets].find(({ uid }) => uid === _uid)
-        
+
         setActiveTicket({
             ...ticket
         });
@@ -115,11 +115,13 @@ const Home = () => {
                 <article className='tickets col-12 col-lg-6 px-3 mb-0 mb-lg-5'>
                     <Loader loading={isLoading} />
 
-                    {
-                        todayTickets.map((ticket, index) => {
-                            return <TicketItem key={index} handleClick={handleClick} {...ticket} />
-                        })
-                    }
+                    <div className={isLoading ? 'd-none' : ''}>
+                        {
+                            todayTickets.map((ticket, index) => {
+                                return <TicketItem key={index} handleClick={handleClick} {...ticket} />
+                            })
+                        }
+                    </div>
                 </article>
 
                 <article className="col-12 col-lg-6 px-5">

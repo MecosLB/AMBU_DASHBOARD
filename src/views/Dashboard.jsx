@@ -7,6 +7,7 @@ import TicketBar from '../components/TicketBar';
 const Dashboard = () => {
     const [user, setUser] = useState(null);
     const [activeTicket, setActiveTicket] = useState(null);
+    const [isUpdating, setUpdate] = useState(false);
 
     useEffect(() => {
         getUser();
@@ -22,14 +23,15 @@ const Dashboard = () => {
             parkName: park_data.name,
         });
     }
+
     return (
         <>
             <section className='bg-main full-container d-flex flex-column justify-content-center'>
                 <TopBar user={{ ...user }} />
                 <SideBar user={{ ...user }} />
 
-                <Outlet context={[activeTicket, setActiveTicket]} />
-                <TicketBar {...activeTicket} />
+                <Outlet context={[activeTicket, setActiveTicket, isUpdating]} />
+                <TicketBar {...activeTicket} isUpdating={isUpdating} updateTickets={setUpdate} />
             </section>
         </>
     );
